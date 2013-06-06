@@ -1,0 +1,31 @@
+{
+  "name": "ruban",
+  "author": {
+    "name": "Loïc Frering",
+    "email": "loic.frering@gmail.com"
+  },
+  "version": "0.2.1",
+  "main": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "jquery": "~2.0.0",
+    "keymaster": "latest",
+    "hammerjs": "~1.0.3",
+    "normalize-css": "~2.1.0",
+    "font-awesome": "~3.1.0",
+    "highlightjs": "~7.3.0"
+  },
+  "gitHead": "eca8566e879825559ae996cc6186bcc330099e7b",
+  "readme": "Ruban\n=====\n\nA simple framework for building nice HTML5 based presentations.\n\nDocumentation\n-------------\n\nYou'll find the documentation on a Ruban: http://loicfrering.github.io/ruban/.\n\nChangelog\n---------\n\n### 0.2.1\n\n* Improve and fix navigation with gestures on mobile devices.\n* Fix an issue with resizing on Webkit.\n\n### 0.2.0\n\n* Move css and js files from dist/ to css/ and js/ directories.\n* Do not generate the Table of Content's title.\n* Add a quickstart distribution.\n* Fix some resizing issues.\n* Improve the documentation.\n\n### 0.1.2\n\n* Table of Contents automatic generation.\n* StyleSheet dedicated to print media.\n* Support adding extra details in <detail> tags.\n\n### 0.1.1\n\n* Support pagination.\n* Fix a resizing issue.\n\n### 0.1.0\n\n* Initial release.\n\nLicense\n-------\n\nCopyright (c) 2013 [Loïc Frering](https://github.com/loicfrering), licensed\nunder the MIT license. See the LICENSE file for more informations.\n",
+  "readmeFilename": "README.md",
+  "_id": "ruban@0.2.1",
+  "description": "Ruban =====",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/loicfrering/ruban"
+  }
+}
