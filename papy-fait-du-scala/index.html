@@ -94,6 +94,7 @@
 - inference de type
 - Interop Java /Scala
 - exec sur la JVM
+
 - fonctions anonymes
 - système de type unifié : tout est objet (types primitifs, tableaux, ...)
 - surcharge d'opérateur
@@ -116,28 +117,112 @@
 -->
 
   <section>
-    <ul class="sj">
-      <li>
-    <pre><code>
-
-      case: String
-
-    </code></pre>
-      </li>
-      <li>
-    <pre><code>
-
-      public static String case = null;
-
-    </code></pre>
-
-      </li>
+    <h1>Notions générales</h1>
+    <ul>
+      <li>POO</li>
+      <li>Programmation fonctionnelle</li>
+      <li>Intéropérable avec Java (ou .Net)</li>
+      <li>Compilé en Bytecode Java</li>
+      <li>Exécuté sur la JVM</li>
     </ul>
 
+  </section>
+
+  <section>
+
+    <pre>
+      <code class="scala">object TerrainDeJeu extends App {
+
+  val list = List("cette", "conférence", "est", "géniale")
+
+  list.foreach {
+    mot =>
+      println(mot)
+  }
+
+  list foreach println _
+
+  var longueurs = list map (mot => (mot, mot.length))
+
+  println("La longueur de chaque mot est: " + longueurs)
+}
+      </code>
+    </pre>
+
+  </section>
+
+
+  <section>
+    <h1>Typepage statique</h1>
+
+    <ul class="steps">
+      <li>
+    <pre>
+      <code class="scala">
+        val a = "bidule"
+        val b: String = a
+        var c = 1         // c: Int
+        c = b             // => Erreur !
+      </code>
+    </pre>
+      </li>
+      <li><i class="icon-thumbs-up icon-2x"></i> Inférence de type</li>
+    </ul>
+  </section>
+
+  <section>
+    <h1>Concis</h1>
+
+    <ul class="steps sj">
+      <li> Java
+    <pre>
+      <code class="java">public class Personne {
+  private String nom;
+
+  public Personne(String nom) {
+    this.nom = nom;
+  }
+  
+  public String getNom() {
+    return nom;
+  }
+
+  public void setNom(String nom) {
+    this.nom = nom;
+  }
+}</code>
+    </pre>
+      </li>
+
+      <li>Scala
+    <pre>
+      <code class="scala">
+class Personne(val nom: String)        
+      </code>
+    </pre>
+      </li>
+
+    </ul>
+
+  </section>
+
+  <section>
+    <h1>Immutabilité</h1>
 
 
   </section>
 
+  <section>
+    <h1>Fonctions à tous les étages</h1>
+
+
+  </section>
+
+  <section>
+    <h1>API de collections</h1>
+
+
+  </section>
 
   <!--
 

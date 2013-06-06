@@ -9,3 +9,7 @@ ul.sj li {
 ul.sj li[float="left"] + li {
 	float:none;
 }
+
+ul.sj code {
+	font-size: 39%;
+}
