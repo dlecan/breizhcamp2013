@@ -8,7 +8,50 @@
   <link rel="stylesheet" href="components/highlightjs/styles/tomorrow.css" />
   <link rel="stylesheet" href="components/ruban/css/ruban.min.css" />
   <link rel="stylesheet" href="components/ruban/css/ruban-print.min.css" media="print" />
-  <link rel="stylesheet" href="css/papy.css" />
+  <style>
+
+    section {
+        max-width: 100%;
+        border-left: 0.5em solid #434343;
+        border-right: 0.5em solid #434343;
+    }
+
+    ul.sj {
+      
+    }
+
+    ul.sj li {
+      display:block;
+      width : 50%;
+      float:left;
+    }
+
+    ul.sj li[float="left"] + li {
+      float:none;
+    }
+
+    ul.sj code {
+      font-size: 37%;
+    }
+
+    code.smaller {
+        font-size: 45%;
+    }
+
+    img.fit {
+        max-width: 100%;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.5em;
+    }
+
+
+  </style>
 </head>
 
 <body>
@@ -74,7 +117,7 @@
   -->
 
   <section>
-    <h1><img src="images/logo_image_scala.png" width="70">&nbsp;Concentré de Scala</h1>
+    <h1><img src="images/logo_image_scala.png" width="70"> Concentré de Scala</h1>
   </section>
 
 
@@ -85,38 +128,7 @@
 
   </section>
 
-
-<!--
-- Scalable language
-- typage statique
-- POO
-- programmation fonctionnelle
-- inference de type
-- Interop Java /Scala
-- exec sur la JVM
-
-- fonctions anonymes
-- système de type unifié : tout est objet (types primitifs, tableaux, ...)
-- surcharge d'opérateur
-- paramètres optionnels
-- paramètres nommés
-- String multi-lignes
-- Exceptions uniquement non vérifiées
-- Une API collection qui tue
-   => A développer
-- Pas de variables de classe : utilisation de singleton pour ça
-- syntaxe flexible : parenthèses sans param omise, point-virgule, opérateur infix
-   => Création de DSL simplifiés
-- variables et objets immuables
-- évaluation différée
-- fonctions d'ordre supérieur : prend en paramètre ou retourne une fonction
-- tuples
-- traits, qui peuvent contenir du code
-
-
--->
-
-  <section>
+  <section id="sommaire">
     <h1>Notions générales</h1>
     <ul>
       <li>POO</li>
@@ -128,7 +140,7 @@
 
   </section>
 
-  <section>
+  <section id="exemple">
 
     <pre>
       <code class="scala">object TerrainDeJeu extends App {
@@ -152,7 +164,7 @@
   </section>
 
 
-  <section>
+  <section class="no-toc" id="typage">
     <h1>Typepage statique</h1>
 
     <ul class="steps">
@@ -161,8 +173,8 @@
       <code class="scala">
         val a = "bidule"
         val b: String = a
-        var c = 1         // c: Int
-        c = b             // => Erreur !
+        var c = 1         // Int
+            c = b         // => Erreur de compilation !
       </code>
     </pre>
       </li>
@@ -170,8 +182,8 @@
     </ul>
   </section>
 
-  <section>
-    <h1>Concis</h1>
+  <section class="no-toc" id="concision">
+    <h1>Concision</h1>
 
     <ul class="steps sj">
       <li> Java
@@ -197,7 +209,7 @@
       <li>Scala
     <pre>
       <code class="scala">
-class Personne(val nom: String)        
+class Personne(var nom: String)        
       </code>
     </pre>
       </li>
@@ -206,22 +218,76 @@ class Personne(val nom: String)
 
   </section>
 
-  <section>
+  <section class="no-toc" id="immutabilite">
     <h1>Immutabilité</h1>
 
-
+    <pre>
+      <code class="scala">
+val s1 = "a"
+    s1 = "a"   // Erreur de compilation
+var s2 = "b"
+    s2 = "b"   // Ok
+      </code>
+    </pre>
   </section>
 
-  <section>
+  <section class="no-toc" id="immutabilite-2">
+    <h1>Immutabilité</h1>
+
+    <pre>
+      <code class="scala smaller">
+val mut = ListBuffer(1) // s.collection.<strong>mutable</strong>.ListBuffer[Int]
+                        // id : <strong>ab853b</strong>
+
+val modMut = mut += 2   // id : <strong>ab853b</strong>
+      </code>
+    </pre>
+  </section>
+
+  <section class="no-toc" id="immutabilite-3">
+    <h1>Immutabilité</h1>
+
+    <pre>
+      <code class="scala smaller">
+val immut = List(1)      // s.collection.<strong>immutable</strong>.List[Int]
+                         // id : <strong>d70d7a</strong>
+
+val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
+      </code>
+    </pre>
+   </section>
+
+  <section class="no-toc" id="immutabilite-4">
+    <h1>Immutabilité</h1>
+
+    <ul>
+      <li>Façon de programmer à adapter</li>
+      <li>Objets créés plus nombreux</li>
+      <li>Code "thread-safe" naturellement</li>
+    </ul>
+
+   </section>
+
+  <section class="no-toc" = id="fonctions">
     <h1>Fonctions à tous les étages</h1>
 
 
   </section>
 
-  <section>
-    <h1>API de collections</h1>
-
-
+  <section class="no-toc" id="plus">
+    <h1>Et plus</h1>
+      <ul class="text-center" style="font-size: 70%;">
+        <li>Système de type unifié : tout est objet (types primitifs, tableaux)</li>
+        <li>Création simplifiée de DSL car syntaxe flexible</li>
+        <li>Exceptions non vérifiées uniquement</li>
+        <li>Paramètres optionnels ou nommés</li>
+        <li>Evaluation différée (<em>lazy</em>)</li>
+        <li>Trait = interface + code</li>
+        <li>String multi-lignes</li>
+        <li>Singleton "natif"</li>
+        <li>Tuples</li>
+        <li>...</li>
+    </ul>
   </section>
 
   <!--
@@ -243,9 +309,38 @@ class Personne(val nom: String)
 
   -->
 
-  <section>
+  <section id="ecosysteme">
     <h1>Ecosystème</h1>
   </section>
+
+  <section class="no-toc" id="akka">
+    <h1>Middleware haute performances</h1>
+
+    <img src="images/accueil_akka.png" class="fit">
+
+  </section>
+
+  <section class="no-toc" id="tests">
+    <h1>Tests</h1>
+
+    <img src="images/accueil_scalatest.png" class="fit">
+
+  </section>
+
+  <section class="no-toc" id="tests-2">
+    <h1>Tests</h1>
+
+    <img src="images/accueil_specs2.png" class="fit">
+
+  </section>
+
+  <section class="no-toc" id="tests-3">
+    <h1>Tests</h1>
+
+    <img src="images/accueil_scalamock.png" class="fit">
+
+  </section>
+
 
 <!--
 
@@ -260,7 +355,7 @@ Test :
     ScalaMock provides support for testing high-order and curried functions
     JUnit or TestNG, two popular testing frameworks written in Java
 
-
+Eclipse, Intellij
 
 
 -->
@@ -294,6 +389,13 @@ Test :
 
 
 -->
+
+  <section class="no-toc">
+    <h1>Worksheet</h1>
+
+    <img src="images/eclipse_worksheet.png" class="fit">
+
+  </section>
 
 
   <!--
