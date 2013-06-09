@@ -34,12 +34,18 @@
       font-size: 37%;
     }
 
+    ul img {
+      vertical-align: middle;
+      margin: 0.25em 1em 0.25em 0;
+    }
+
     code.smaller {
         font-size: 45%;
     }
 
     img.fit {
-        max-width: 100%;
+        max-width: 95%;
+        max-height: 95%;
     }
 
     .text-center {
@@ -313,10 +319,71 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
     <h1>Ecosystème</h1>
   </section>
 
+  <section id="code" class="no-toc">
+    <h1>Code</h1>
+  </section>
+
+  <section id="code-texte" class="no-toc">
+    <h1>Editeur de texte</h1>
+
+    <img src="images/code_texte.png" class="fit">
+
+  </section>
+
+  <section id="code-ide-eclipse" class="no-toc">
+    <h1>Scala IDE pour Eclipse</h1>
+
+    <img src="images/code_scalaide.png" class="fit">
+
+  </section>
+
+  <section id="code-ide-intellij" class="no-toc">
+    <h1>Intellij</h1>
+
+    <img src="images/code_intellij.png" class="fit">
+
+  </section>
+
+  <section>
+    <h1>Build</h1>
+
+    <ul class="steps">
+      <li><img src="images/logo_maven.png">Apache Maven</li>
+      <li><img src="images/logo_gradle.gif">Gradle</li>
+      <li><img src="images/logo_sbt.png"><a href="http://www.scala-sbt.org/">Scala SBT</a></li>
+    </ul>
+
+  </section>
+
+  <section id="devweb" class="no-toc">
+    <h1>Développement Web</h1>
+  </section>
+
+  <section id="devweb-lift" class="no-toc">
+    <h1>Lift</h1>
+
+    <img src="images/devweb_lift" class="fit">
+
+  </section>
+
+  <section id="devweb-playframework" class="no-toc">
+    <h1>Play Framework 2.x</h1>
+
+    <img src="images/devweb_playframework-1.png" style="max-height: 25%;">
+    <br/>
+    <img src="images/devweb_playframework-1.png" style="max-height: 35%;">
+
+  </section>
+
   <section class="no-toc" id="akka">
     <h1>Middleware haute performances</h1>
 
     <img src="images/accueil_akka.png" class="fit">
+
+  </section>
+
+  <section class="no-toc" id="tests">
+    <h1>Tests</h1>
 
   </section>
 
@@ -341,24 +408,12 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
 
   </section>
 
+  <section class="no-toc" id="ecosystem-plus">
+    <h1>Et bien <i class="icon-plus"></i></h1>
 
-<!--
+    <img src="images/ecosysteme_plus.png" class="fit">
 
-Web : Play, Lift, Scalatra
-Build : SBT
-Middleware : Akka
-Test : 
-
-    ScalaTest supports multiple testing styles and can integrate with Java-based testing frameworks
-    ScalaCheck, a library similar to Haskell's QuickCheck
-    specs2, a library for writing executable software specifications
-    ScalaMock provides support for testing high-order and curried functions
-    JUnit or TestNG, two popular testing frameworks written in Java
-
-Eclipse, Intellij
-
-
--->
+  </section>
 
   <!--
 
