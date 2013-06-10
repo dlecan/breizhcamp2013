@@ -56,20 +56,26 @@
       font-size: 1.5em;
     }
 
+    #damien-lecan aside {
+      position: absolute;
+      right: 1em;
+      bottom: 0.4em;
+    }
 
   </style>
 </head>
 
 <body>
-  <section class="no-toc">
+  <section class="no-toc" id="titre">
     <h1>Papy fait du Scala</h1>
   </section>
 
-  <section id="dlecan">
-    <h1>Damien Lecan <aside><i class="icon-globe"></i> SQLI Group</aside></h1>
+  <section id="damien-lecan">
+    <h1>Damien Lecan</h1>
+    <aside><img src="images/logo_sqli.com.png" width="200px"></aside>
     <ul>
       <li><i class="icon-map-marker"></i> Nantes, France</li>
-      <li><i class="icon-building"></i> <a href="http://www.sqli.com" title="SQLI">SQLI</a></li>
+      <li><i class="icon-building"></i> <a href="http://www.sqli.com" title="SQLI">SQLI Group</a></li>
       <li><i class="icon-twitter"></i> <a href="https://twitter.com/dlecan" title="@dlecan sur Twitter">@dlecan</a></li>
       <li><i class="icon-github"></i> <a href="https://github.com/dlecan" title="@dlecan sur GitHub">@dlecan</a></li>
     </ul>
@@ -91,6 +97,9 @@
 
   <section id="intro" class="no-toc">
     <h1>Pourquoi ?</h1>
+    <ul class="steps">
+      <li><img src="images/play2war_github.png" class="fit"></li>
+    </ul>
   </section>
 
   <section class="toc">
@@ -267,9 +276,9 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
     <h1>Immutabilité</h1>
 
     <ul>
-      <li>Façon de programmer à adapter</li>
-      <li>Objets créés plus nombreux</li>
-      <li>Code "thread-safe" naturellement</li>
+      <li><i class="icon-rocket"></i> Façon de programmer à adapter</li>
+      <li><i class="icon-info-sign"></i> Objets créés plus nombreux</li>
+      <li><i class="icon-ok-sign"></i> Code "thread-safe" naturellement</li>
     </ul>
 
    </section>
@@ -277,7 +286,23 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
   <section class="no-toc" = id="fonctions">
     <h1>Fonctions à tous les étages</h1>
 
+    <pre>
+      <code class="scala">
+  val list = List("Cette", "conférence", "est", "toujours", "aussi", "géniale")
 
+  def containsE(word: String): Boolean = word.contains("e")
+
+  val listE = list filter containsE
+           // list.filter(elt => containsE(elt))
+           //> List(Cette, conférence, est, géniale)
+
+  val getLength = (word: String) => word.length
+
+  val res = listE map getLength //> List(5, 10, 3, 7)
+         // listE.map(word => getLength(word))
+
+      </code>
+    </pre>
   </section>
 
   <section class="no-toc" id="plus">
@@ -285,6 +310,7 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
       <ul class="text-center" style="font-size: 70%;">
         <li>Système de type unifié : tout est objet (types primitifs, tableaux)</li>
         <li>Création simplifiée de DSL car syntaxe flexible</li>
+        <li>Extraordinaire API de collection, très riche</li>
         <li>Exceptions non vérifiées uniquement</li>
         <li>Paramètres optionnels ou nommés</li>
         <li>Evaluation différée (<em>lazy</em>)</li>
@@ -316,11 +342,11 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
   -->
 
   <section id="ecosysteme">
-    <h1>Ecosystème</h1>
+    <h1><i class="icon-briefcase"></i> Ecosystème</h1>
   </section>
 
   <section id="code" class="no-toc">
-    <h1>Code</h1>
+    <h1><i class="icon-code"></i> Code</h1>
   </section>
 
   <section id="code-texte" class="no-toc">
@@ -331,21 +357,21 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
   </section>
 
   <section id="code-ide-eclipse" class="no-toc">
-    <h1>Scala IDE pour Eclipse</h1>
+    <h1>Eclipse Scala IDE</h1>
 
     <img src="images/code_scalaide.png" class="fit">
 
   </section>
 
   <section id="code-ide-intellij" class="no-toc">
-    <h1>Intellij</h1>
+    <h1>IntelliJ</h1>
 
     <img src="images/code_intellij.png" class="fit">
 
   </section>
 
-  <section>
-    <h1>Build</h1>
+  <section id="build">
+    <h1><i class="icon-cogs"></i> Build</h1>
 
     <ul class="steps">
       <li><img src="images/logo_maven.png">Apache Maven</li>
@@ -355,23 +381,12 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
 
   </section>
 
-  <section id="devweb" class="no-toc">
-    <h1>Développement Web</h1>
-  </section>
-
-  <section id="devweb-lift" class="no-toc">
-    <h1>Lift</h1>
-
-    <img src="images/devweb_lift" class="fit">
-
-  </section>
-
-  <section id="devweb-playframework" class="no-toc">
-    <h1>Play Framework 2.x</h1>
+  <section id="playframework" class="no-toc">
+    <h1><i class="icon-html5"></i> Play Framework 2.x</h1>
 
     <img src="images/devweb_playframework-1.png" style="max-height: 25%;">
     <br/>
-    <img src="images/devweb_playframework-1.png" style="max-height: 35%;">
+    <img src="images/devweb_playframework-2.png" style="max-height: 70%;">
 
   </section>
 
@@ -401,15 +416,24 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
 
   </section>
 
-  <section class="no-toc" id="tests-3">
-    <h1>Tests</h1>
+  <section class="no-toc" id="ecosystem-plus">
+    <h1>Et <i class="icon-plus"></i></h1>
 
-    <img src="images/accueil_scalamock.png" class="fit">
+    <ul>
+      <li>ScalaMock</li>
+      <li>Lift::Web</li>
+      <li>ScalaStyle</li>
+      <li>scalaz</li>
+      <li>Slick</li>
+      <li>ScalaQuery</li>
+      <li>Squeryl</li>
+      <li>...</li>
+    </ul>
 
   </section>
 
-  <section class="no-toc" id="ecosystem-plus">
-    <h1>Et bien <i class="icon-plus"></i></h1>
+  <section class="no-toc" id="ecosystem-encore-plus">
+    <h1>Encore <i class="icon-plus"></i></h1>
 
     <img src="images/ecosysteme_plus.png" class="fit">
 
@@ -438,14 +462,9 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
     <h1>Pièges, trucs et astuces</h1>
   </section>
 
-<!--
-
-- Incompatibilité de binaire
 
 
--->
-
-  <section class="no-toc">
+  <section class="no-toc" id="scala-worksheet">
     <h1>Worksheet</h1>
 
     <img src="images/eclipse_worksheet.png" class="fit">
