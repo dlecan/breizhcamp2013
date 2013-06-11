@@ -16,27 +16,32 @@
         border-right: 0.5em solid #434343;
     }
 
-    ul.sj {
+    ul > li {
+      margin-top: 0.2em;
+      margin-bottom: 0.2em;
+    }
+
+    ul.cotecote {
       
     }
 
-    ul.sj li {
+    ul.cotecote > li {
       display:block;
       width : 50%;
       float:left;
     }
 
-    ul.sj li[float="left"] + li {
+    ul.cotecote > li[float="left"] + li {
       float:none;
     }
 
-    ul.sj code {
+    ul.cotecote code {
       font-size: 37%;
     }
 
     ul img {
       vertical-align: middle;
-      margin: 0.25em 1em 0.25em 0;
+      margin-right: 1em;
     }
 
     code.smaller {
@@ -59,7 +64,10 @@
     #damien-lecan aside {
       position: absolute;
       right: 1em;
-      bottom: 0.4em;
+    }
+
+    #damien-lecan img {
+      width: 4em;
     }
 
   </style>
@@ -70,14 +78,25 @@
     <h1>Papy fait du Scala</h1>
   </section>
 
-  <section id="damien-lecan">
+  <section id="damien-lecan" class="no-toc">
     <h1>Damien Lecan</h1>
-    <aside><img src="images/logo_sqli.com.png" width="200px"></aside>
+    <aside>
+        <img src="images/damien_lecan.jpg">
+    </aside>
+    <ul>
+      <li>Architecte Java & Co. <i class="icon-heart"></i> Web</li>
+      <li>Développeur depuis 1998</li>
+    </ul>
+
+    <aside>
+        <img src="images/logo_sqli.com.png">
+    </aside>
+
     <ul>
       <li><i class="icon-map-marker"></i> Nantes, France</li>
       <li><i class="icon-building"></i> <a href="http://www.sqli.com" title="SQLI">SQLI Group</a></li>
       <li><i class="icon-twitter"></i> <a href="https://twitter.com/dlecan" title="@dlecan sur Twitter">@dlecan</a></li>
-      <li><i class="icon-github"></i> <a href="https://github.com/dlecan" title="@dlecan sur GitHub">@dlecan</a></li>
+      <li><i class="icon-github"></i> <a href="https://github.com/dlecan" title="dlecan sur GitHub">github.com/dlecan</a></li>
     </ul>
   </section>
 
@@ -102,7 +121,7 @@
     </ul>
   </section>
 
-  <section class="toc">
+  <section id="sommaire" class="toc">
     <h1>Sommaire</h1>
   </section>
 
@@ -131,21 +150,22 @@
                                                                                           
   -->
 
-  <section>
+  <section id="concentre">
     <h1><img src="images/logo_image_scala.png" width="70"> Concentré de Scala</h1>
+
   </section>
 
 
-  <section>
+  <section class="no-toc">
     <h1>&nbsp;</h1>
 
     <img src="images/logo_scala.png" width="700">
 
   </section>
 
-  <section id="sommaire">
+  <section id="notions">
     <h1>Notions générales</h1>
-    <ul>
+    <ul class="steps">
       <li>POO</li>
       <li>Programmation fonctionnelle</li>
       <li>Intéropérable avec Java (ou .Net)</li>
@@ -171,7 +191,7 @@
 
   var longueurs = list map (mot => (mot, mot.length))
 
-  println("La longueur de chaque mot est: " + longueurs)
+  println("La longueur de chaque mot est : " + longueurs)
 }
       </code>
     </pre>
@@ -200,8 +220,8 @@
   <section class="no-toc" id="concision">
     <h1>Concision</h1>
 
-    <ul class="steps sj">
-      <li> Java
+    <ul class="steps cotecote">
+      <li>Java
     <pre>
       <code class="java">public class Personne {
   private String nom;
@@ -278,12 +298,12 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
     <ul>
       <li><i class="icon-rocket"></i> Façon de programmer à adapter</li>
       <li><i class="icon-info-sign"></i> Objets créés plus nombreux</li>
-      <li><i class="icon-ok-sign"></i> Code "thread-safe" naturellement</li>
+      <li><i class="icon-ok-sign"></i> Code <em>thread-safe</em> "naturellement"</li>
     </ul>
 
    </section>
 
-  <section class="no-toc" = id="fonctions">
+  <section class="no-toc" id="fonctions">
     <h1>Fonctions à tous les étages</h1>
 
     <pre>
@@ -310,7 +330,7 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
       <ul class="text-center" style="font-size: 70%;">
         <li>Système de type unifié : tout est objet (types primitifs, tableaux)</li>
         <li>Création simplifiée de DSL car syntaxe flexible</li>
-        <li>Extraordinaire API de collection, très riche</li>
+        <li>Extraordinaire API de collections, très riche</li>
         <li>Exceptions non vérifiées uniquement</li>
         <li>Paramètres optionnels ou nommés</li>
         <li>Evaluation différée (<em>lazy</em>)</li>
@@ -381,16 +401,20 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
 
   </section>
 
-  <section id="playframework" class="no-toc">
-    <h1><i class="icon-html5"></i> Play Framework 2.x</h1>
+  <section id="devweb" class="no-toc">
+    <h1><i class="icon-html5"></i> Développement Web</h1>
 
-    <img src="images/devweb_playframework-1.png" style="max-height: 25%;">
-    <br/>
-    <img src="images/devweb_playframework-2.png" style="max-height: 70%;">
+    <ul class="steps">
+      <li>
+        <img src="images/devweb_playframework-1.png" style="max-height: 65%; max-width: 50%">
+        <img src="images/devweb_playframework-2.png" style="max-height: 65%; max-width: 50%">
+      </li>
+      <li style="margin-top: 2em;"><i class="icon-upload-alt"></i> <a href="http://liftweb.net/">Lift</a></li>
+    </ul>
 
   </section>
 
-  <section class="no-toc" id="akka">
+  <section class="no-toc" id="middleware">
     <h1>Middleware haute performances</h1>
 
     <img src="images/accueil_akka.png" class="fit">
@@ -412,7 +436,12 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
   <section class="no-toc" id="tests-2">
     <h1>Tests</h1>
 
-    <img src="images/accueil_specs2.png" class="fit">
+    <ul>
+      <li>
+        <img src="images/accueil_specs2.png" class="fit">
+      </li>
+      <li><i class="icon-chevron-sign-right"></i> ScalaMock</li>
+    </ul>
 
   </section>
 
@@ -420,13 +449,15 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
     <h1>Et <i class="icon-plus"></i></h1>
 
     <ul>
-      <li>ScalaMock</li>
-      <li>Lift::Web</li>
+      <li>Accès bases de données
+        <ul>
+          <li>Slick</li>
+          <li>ScalaQuery</li>
+          <li>Squeryl</li>
+        </ul>
+      </li>
       <li>ScalaStyle</li>
       <li>scalaz</li>
-      <li>Slick</li>
-      <li>ScalaQuery</li>
-      <li>Squeryl</li>
       <li>...</li>
     </ul>
 
@@ -458,11 +489,26 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
 
   -->
 
-  <section>
-    <h1>Pièges, trucs et astuces</h1>
+  <section id="pieges-trucs-astuces">
+    <h1><i class="icon-warning-sign"></i>Pièges
+      <br/><i class="icon-star"></i>Trucs
+      <br/><i class="icon-spinner icon-spin"></i>Astuces</h1>
   </section>
 
+  <section id="incompatibilite-binaire" class="no-toc" >
+    <h1><i class="icon-warning-sign"></i> Incompatibilité binaire</h1>
 
+  </section>
+
+  <section id="incompatibilite-binaire" class="no-toc" >
+    <h1>Incompatibilité binaire</h1>
+
+  </section>
+
+  <section id="" class="no-toc" >
+    <h1></h1>
+
+  </section>
 
   <section class="no-toc" id="scala-worksheet">
     <h1>Worksheet</h1>
@@ -515,7 +561,7 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
   -->
 
   <section class="no-toc" id="conclusion">
-    <h1>Conclusion</h1>
+    <h1>Q / R <i class="icon-question"></i></h1>
   </section>
 
   <script src="components/jquery/jquery.min.js"></script>
