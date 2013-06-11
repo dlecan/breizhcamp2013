@@ -70,6 +70,10 @@
       width: 4em;
     }
 
+    blockquote {
+      text-align: justify;
+    }
+
   </style>
 </head>
 
@@ -84,7 +88,7 @@
         <img src="images/damien_lecan.jpg">
     </aside>
     <ul>
-      <li>Architecte Java & Co. <i class="icon-heart"></i> Web</li>
+      <li>Architecte Java &amp; Co. <i class="icon-heart"></i> Web</li>
       <li>Développeur depuis 1998</li>
     </ul>
 
@@ -117,7 +121,7 @@
   <section id="intro" class="no-toc">
     <h1>Pourquoi ?</h1>
     <ul class="steps">
-      <li><img src="images/play2war_github.png" class="fit"></li>
+      <li><a href="https://github.com/dlecan/play2-war-plugin"><img src="images/play2war_github.png" class="fit"></a></li>
     </ul>
   </section>
 
@@ -159,7 +163,7 @@
   <section class="no-toc">
     <h1>&nbsp;</h1>
 
-    <img src="images/logo_scala.png" width="700">
+    <a href="http://www.scala-lang.org/"><img src="images/logo_scala.png" width="700px"></a>
 
   </section>
 
@@ -307,36 +311,36 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
     <h1>Fonctions à tous les étages</h1>
 
     <pre>
-      <code class="scala">
-  val list = List("Cette", "conférence", "est", "toujours", "aussi", "géniale")
+      <code class="scala smaller">val list = List("Cette", "conférence", "est", "toujours", "aussi", "géniale")
+       //> List[String] = List(Cette, conférence, est, toujours, aussi, géniale)
 
-  def containsE(word: String): Boolean = word.contains("e")
+list filter (word => word.contains("e"))
+       //> List[String] = List(Cette, conférence, est, géniale)
 
-  val listE = list filter containsE
-           // list.filter(elt => containsE(elt))
-           //> List(Cette, conférence, est, géniale)
+val byE = (word: String) => word.contains("e")
+       //> byE  : String => Boolean = &lt;function1&gt;
 
-  val getLength = (word: String) => word.length
-
-  val res = listE map getLength //> List(5, 10, 3, 7)
-         // listE.map(word => getLength(word))
-
+list filter byE
+       //> List[String] = List(Cette, conférence, est, géniale)
       </code>
     </pre>
   </section>
 
   <section class="no-toc" id="plus">
     <h1>Et plus</h1>
-      <ul class="text-center" style="font-size: 70%;">
+      <ul class="text-center" style="font-size: 60%;">
         <li>Système de type unifié : tout est objet (types primitifs, tableaux)</li>
         <li>Création simplifiée de DSL car syntaxe flexible</li>
         <li>Extraordinaire API de collections, très riche</li>
         <li>Exceptions non vérifiées uniquement</li>
         <li>Paramètres optionnels ou nommés</li>
+        <li>Variable ou classes implicites</li>
         <li>Evaluation différée (<em>lazy</em>)</li>
         <li>Trait = interface + code</li>
+        <li>Surcharge d'opérateur</li>
         <li>String multi-lignes</li>
-        <li>Singleton "natif"</li>
+        <li>Pattern matching</li>
+        <li>Singleton</li>
         <li>Tuples</li>
         <li>...</li>
     </ul>
@@ -379,14 +383,14 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
   <section id="code-ide-eclipse" class="no-toc">
     <h1>Eclipse Scala IDE</h1>
 
-    <img src="images/code_scalaide.png" class="fit">
+    <a href="http://scala-ide.org/"><img src="images/code_scalaide.png" class="fit"></a>
 
   </section>
 
   <section id="code-ide-intellij" class="no-toc">
     <h1>IntelliJ</h1>
 
-    <img src="images/code_intellij.png" class="fit">
+    <a href="http://www.jetbrains.com/idea/"><img src="images/code_intellij.png" class="fit"></a>
 
   </section>
 
@@ -394,9 +398,9 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
     <h1><i class="icon-cogs"></i> Build</h1>
 
     <ul class="steps">
-      <li><img src="images/logo_maven.png">Apache Maven</li>
-      <li><img src="images/logo_gradle.gif">Gradle</li>
-      <li><img src="images/logo_sbt.png"><a href="http://www.scala-sbt.org/">Scala SBT</a></li>
+      <li><a href="http://maven.apache.org"><img src="images/logo_maven.png">Apache Maven</a></li>
+      <li><a href="http://www.gradle.org/"><img src="images/logo_gradle.gif">Gradle</a></li>
+      <li><a href="http://www.scala-sbt.org/"><img src="images/logo_sbt.png">Scala SBT</a></li>
     </ul>
 
   </section>
@@ -406,8 +410,8 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
 
     <ul class="steps">
       <li>
-        <img src="images/devweb_playframework-1.png" style="max-height: 65%; max-width: 50%">
-        <img src="images/devweb_playframework-2.png" style="max-height: 65%; max-width: 50%">
+        <a href="http://www.playframework.com/"><img src="images/devweb_playframework-1.png" style="max-height: 65%; max-width: 50%">
+        <img src="images/devweb_playframework-2.png" style="max-height: 65%; max-width: 50%"></a>
       </li>
       <li style="margin-top: 2em;"><i class="icon-upload-alt"></i> <a href="http://liftweb.net/">Lift</a></li>
     </ul>
@@ -417,7 +421,7 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
   <section class="no-toc" id="middleware">
     <h1>Middleware haute performances</h1>
 
-    <img src="images/accueil_akka.png" class="fit">
+    <a href="http://www.akka.io"><img src="images/accueil_akka.png" class="fit"></a>
 
   </section>
 
@@ -429,7 +433,7 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
   <section class="no-toc" id="tests">
     <h1>Tests</h1>
 
-    <img src="images/accueil_scalatest.png" class="fit">
+    <a href="http://www.scalatest.org/"><img src="images/accueil_scalatest.png" class="fit"></a>
 
   </section>
 
@@ -438,9 +442,9 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
 
     <ul>
       <li>
-        <img src="images/accueil_specs2.png" class="fit">
+        <a href="http://etorreborre.github.io/specs2/"><img src="images/accueil_specs2.png" class="fit"></a>
       </li>
-      <li><i class="icon-chevron-sign-right"></i> ScalaMock</li>
+      <li><i class="icon-chevron-sign-right"></i> <a href="http://scalamock.org/">ScalaMock</a></li>
     </ul>
 
   </section>
@@ -451,13 +455,13 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
     <ul>
       <li>Accès bases de données
         <ul>
-          <li>Slick</li>
-          <li>ScalaQuery</li>
-          <li>Squeryl</li>
+          <li><a href="http://slick.typesafe.com/">Slick</a></li>
+          <li><a href="http://squeryl.org/">Squeryl</a></li>
+          <li><a href="http://www.playframework.com/documentation/2.1.1/ScalaAnorm">Anorm</a></li>
         </ul>
       </li>
-      <li>ScalaStyle</li>
-      <li>scalaz</li>
+      <li><a href="http://www.scalastyle.org/">ScalaStyle</a></li>
+      <li><a href="https://github.com/scalaz/scalaz">scalaz</a></li>
       <li>...</li>
     </ul>
 
@@ -466,7 +470,7 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
   <section class="no-toc" id="ecosystem-encore-plus">
     <h1>Encore <i class="icon-plus"></i></h1>
 
-    <img src="images/ecosysteme_plus.png" class="fit">
+    <a href="http://search.maven.org/"><img src="images/ecosysteme_plus.png" class="fit"></a>
 
   </section>
 
@@ -490,33 +494,68 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
   -->
 
   <section id="pieges-trucs-astuces">
-    <h1><i class="icon-warning-sign"></i>Pièges
-      <br/><i class="icon-star"></i>Trucs
-      <br/><i class="icon-spinner icon-spin"></i>Astuces</h1>
+    <h1><i class="icon-warning-sign"></i> Pièges,
+      <br/><i class="icon-star"></i> trucs,
+      <br/><i class="icon-spinner icon-spin"></i> astuces</h1>
   </section>
 
-  <section id="incompatibilite-binaire" class="no-toc" >
-    <h1><i class="icon-warning-sign"></i> Incompatibilité binaire</h1>
+  <section id="compatibilite-binaire" class="no-toc" >
+    <h1><i class="icon-warning-sign"></i> Compatibilité binaire</h1>
 
-  </section>
-
-  <section id="incompatibilite-binaire" class="no-toc" >
-    <h1>Incompatibilité binaire</h1>
+    <blockquote><i class="icon-quote-left icon-4x pull-left"></i>Une bibliothèque compilée avec une version particulière de Scala ne fonctionnera pas nécessairement avec une version plus récente ou plus ancienne.</blockquote>
 
   </section>
 
-  <section id="" class="no-toc" >
-    <h1></h1>
+  <section id="temps-compilation" class="no-toc" >
+    <h1><i class="icon-warning-sign"></i> Temps de compilation</h1>
+
+    <ul>
+      <li>Le compilateur fait beaucoup de travail 
+        <br/>&nbsp;&nbsp;&nbsp;<i class="icon-arrow-right"></i> ça se paie !</li>
+      <li><i class="icon-ok"></i> Modulariser</li>
+      <li><i class="icon-ok"></i> Configurer la compilation incrémentale via SBT (ou Maven / Gradle)</li>
+    </ul>
+
+  </section>
+
+  <section id="faire-nimporte-quoi" class="no-toc" >
+    <h1><i class="icon-warning-sign"></i> Faire n'importe quoi</h1>
+
+    <pre>
+      <code class="scala">
+s(7) <*> (s(8) <*> (s(9) ∘ add3)) assert_=== s(24)
+f("bzzt") <*> (s(8) <*> (f("bang") ∘ add3)) assert_=== ff(List("bang", "bzzt"))
+
+w.toLowerCase.groupBy(char => char).toList.sortBy {
+  case (char, word) => char
+}.map {
+  case (char, word) => (char, word.length)
+}
+...
+      </code>
+    </pre>
 
   </section>
 
   <section class="no-toc" id="scala-worksheet">
-    <h1>Worksheet</h1>
+    <h1><i class="icon-star"></i> Worksheet</h1>
 
     <img src="images/eclipse_worksheet.png" class="fit">
 
   </section>
 
+  <section class="no-toc" id="bien-demarrer">
+    <h1><i class="icon-info-sign"></i> Bien démarrer</h1>
+
+    <ul class="steps">
+      <li>Suivre la formation Scala sur Coursera
+        <br/>&nbsp;&nbsp;<a href="https://www.coursera.org/course/progfun">https://www.coursera.org/course/progfun</a></li>
+      <li>Hiérarchiser les fonctionnalités de Scala</li>
+      <li>Les introduire progressivement dans son code</li>
+      <li>Limiter les dépendances externes</li>
+    </ul>
+
+  </section>
 
   <!--
 
@@ -538,7 +577,11 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
   -->
 
   <section>
-    <h1>Pourquoi apprendre ?</h1>
+    <h1>$$ Enrichissement $$</h1>
+  </section>
+
+  <section id="trop-vieux" class="no-toc" >
+   <blockquote><i class="icon-quote-left icon-4x pull-left"></i>Je suis trop vieux pour ces conneries !</blockquote>
   </section>
 
   <!--
@@ -560,7 +603,18 @@ val modImmu = immut :+ 2 // id : <strong>b5f53a</strong>
 
   -->
 
-  <section class="no-toc" id="conclusion">
+  <section id="liens" class="no-toc" >
+    <h1>Liens</h1>
+
+    <ul>
+      <li><a href="http://www.scala-lang.org/">http://www.scala-lang.org/</a></li>
+      <li><a href="http://docs.scala-lang.org/cheatsheets/">Scalacheat sheet</a></li>
+      <li><a href="http://zeroturnaround.com/rebellabs/scala-2013-a-pragmatic-guide-to-scala-adoption-in-your-java-organization/#!/">A Pragmatic Guide to Scala Adoption in Your Java Organization (ZeroTurnaround)</a></li>
+    </ul>
+
+  </section>
+
+  <section class="no-toc" id="questions-reponses">
     <h1>Q / R <i class="icon-question"></i></h1>
   </section>
 
