@@ -67,12 +67,6 @@
       text-align: center;
     }
 
-    #titre aside {
-      bottom: 0.4em;
-      position: absolute;
-      right: 1em;
-    }
-
     #damien-lecan aside {
       position: absolute;
       right: 1em;
@@ -82,8 +76,26 @@
       width: 4em;
     }
 
+    footer img {
+      width: 4em;
+    }
+
     blockquote {
       text-align: justify;
+    }
+
+    footer.rubanpowered {
+      position: absolute;
+      bottom: 0.6em;
+      left: 1em;
+      font-size: 50%;
+    }
+
+    footer.breizhcamp {
+      position: absolute;
+      bottom: 0.4em;
+      right: 1em;
+      font-size: 100%;
     }
 
   </style>
@@ -92,7 +104,12 @@
 <body>
   <section id="titre">
     <h1>Papy fait du Scala</h1>
-    <aside><img src="images/logo_breizhcamp.png"></aside>
+    <footer class="rubanpowered">
+      <a href="http://loicfrering.github.io/ruban/">Propulsé par Ruban</a>
+    </footer>
+    <footer class="breizhcamp">
+      <a href="http://www.breizhcamp.org/"><img src="images/logo_breizhcamp.png"></a>
+    </footer>
   </section>
 
   <section id="damien-lecan" class="no-toc">
