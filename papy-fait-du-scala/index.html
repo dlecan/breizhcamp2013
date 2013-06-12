@@ -57,8 +57,20 @@
       text-align: center;
     }
 
-    h1 {
+    /*h1 {
       font-size: 1.5em;
+    }*/
+
+    #titre h1 {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    #titre aside {
+      bottom: 0.4em;
+      position: absolute;
+      right: 1em;
     }
 
     #damien-lecan aside {
@@ -66,7 +78,7 @@
       right: 1em;
     }
 
-    #damien-lecan img {
+    aside img {
       width: 4em;
     }
 
@@ -78,8 +90,9 @@
 </head>
 
 <body>
-  <section class="no-toc" id="titre">
+  <section id="titre">
     <h1>Papy fait du Scala</h1>
+    <aside><img src="images/logo_breizhcamp.png"></aside>
   </section>
 
   <section id="damien-lecan" class="no-toc">
