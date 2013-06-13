@@ -1,0 +1,87 @@
+section {
+  max-width: 100%;
+  border-left: 0.5em solid #434343;
+  border-right: 0.5em solid #434343;
+}
+
+ul > li {
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+ul.cotecote {
+
+}
+
+ul.cotecote > li {
+  display:block;
+  width : 50%;
+  float:left;
+}
+
+ul.cotecote > li[float="left"] + li {
+  float:none;
+}
+
+ul.cotecote code {
+  font-size: 37%;
+}
+
+ul img {
+  vertical-align: middle;
+  margin-right: 1em;
+}
+
+code.smaller {
+  font-size: 45%;
+}
+
+img.fit {
+  max-width: 95%;
+  max-height: 95%;
+}
+
+.text-center {
+text-align: center;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+#titre h1 {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#damien-lecan aside {
+  position: absolute;
+  right: 1em;
+}
+
+aside img {
+  width: 4em;
+}
+
+footer img {
+  width: 4em;
+}
+
+blockquote {
+  text-align: justify;
+}
+
+footer.rubanpowered {
+  position: absolute;
+  bottom: 0.6em;
+  left: 1em;
+  font-size: 50%;
+}
+
+footer.breizhcamp {
+  position: absolute;
+  bottom: 0.4em;
+  right: 1em;
+  font-size: 100%;
+}
